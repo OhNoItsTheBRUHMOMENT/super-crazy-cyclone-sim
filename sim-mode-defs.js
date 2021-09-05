@@ -1,12 +1,34 @@
 // ---- Simulation Modes ---- //
-
-const SIMULATION_MODES = ['Normal (Atlantic)','Hyper','Wild','Megablobs','Experimental','WPac']; // Labels for sim mode selector UI
+const SIMULATION_MODES = ['Not Normal','Ultra Hyper','Crazy Wild','Mega Hyper','Crazy Experimental','West Pacific','Super Extreme','A bit Hot']; // Labels for sim mode selector UI
 const SIM_MODE_NORMAL = 0;
 const SIM_MODE_HYPER = 1;
 const SIM_MODE_WILD = 2;
 const SIM_MODE_MEGABLOBS = 3;
 const SIM_MODE_EXPERIMENTAL = 4;
 const SIM_MODE_WPAC = 5;
+const SIM_MODE_EXTREME = 6;
+const SIM_MODE_HOT = 7;
+// ---- Active Attributes ---- //
+
+// Active attributes are data of ActiveSystem not inherited from StormData; used for simulation of active storm systems
+// Here defines the names of these attributes for a given simulation mode
+
+const ACTIVE_ATTRIBS = {};
+
+ACTIVE_ATTRIBS.defaults = [
+    'organization',
+    'lowerWarmCore',
+    'upperWarmCore',
+    'depth'
+];
+
+ACTIVE_ATTRIBS[SIM_MODE_EXPERIMENTAL] = [
+    'organization',
+    'lowerWarmCore',
+    'upperWarmCore',
+    'depth',
+    'kaboom'
+];
 
 // ---- Spawn Rules ---- //
 
